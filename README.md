@@ -147,5 +147,6 @@ The system integrates:
 
 ---
 
-## License
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+## 💬 Feedback
+
+For queries or suggestions, open an issue or contact any of the contributors.

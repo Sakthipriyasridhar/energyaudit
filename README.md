@@ -1,279 +1,152 @@
-# **ML-Based Household Electricity Consumption Forecasting & Optimization Platform**
+# Cloud-Based Efficient Energy Audit Management System Using Machine Learning
+
 
 ## Project Overview
 
-This project presents a **cloud-based household electricity consumption forecasting system** that leverages **machine learning algorithms** to predict future energy usage and provide personalized optimization recommendations. The platform enables households to forecast their electricity consumption, analyze current usage patterns, and identify cost-saving opportunities through appliance optimization and solar energy integration.
-
-![Main Dashboard](https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Main+Dashboard+Showing+Navigation+and+Overview)
-*Main application dashboard with intuitive navigation between forecasting, survey, and optimization modules*
+This project presents a **cloud-based energy audit management system** that leverages **machine learning** to optimize energy consumption, forecast future usage, and integrate renewable energy sources. The system utilizes historical power consumption data, solar irradiance metrics, and wind speed records collected between 2020 and 2024 to provide actionable insights for energy efficiency.
 
 ---
 
 ## Key Features
 
-### 1. **AI-Powered Consumption Forecasting**
-   - Predicts future electricity usage using **Enhanced Random Forest Regressor**
-   - Provides **12-month consumption forecasts** with 85%+ accuracy (R² > 0.85)
-   - Incorporates seasonal patterns, historical trends, and temporal dependencies
+### 1. **Data Prediction & Anomaly Detection**
+   - Identifies unusual patterns in energy datasets.
+   - Uses **Random Forest Regressor** for missing data imputation.
+   - **Isolation Forest** for anomaly detection.
 
-   ![Forecasting Interface](https://via.placeholder.com/800x400/FF9800/FFFFFF?text=AI+Forecasting+with+Consumption+Charts+and+Metrics)
+   ![Anomaly Detection](images/anomaly.png)
 
-### 2. **Interactive Energy Survey**
-   - Comprehensive data collection on household appliances and usage patterns
-   - Real-time bill calculation using **TNEB slab rates**
-   - Seasonal adjustment for accurate consumption profiling
-   - 15+ appliance types with power ratings and usage patterns
+### 2. **Energy Forecasting**
+   - Predicts future energy consumption using **ANN, RF, and SVM** models.
+   - Provides **5-year forecasts (2025–2030)** based on historical data.
+   - Comparative analysis of model performance (MSE, R², MAE).
 
-   ![Survey Interface](https://via.placeholder.com/800x400/2196F3/FFFFFF?text=Energy+Survey+with+Appliance+Configuration)
+   ![Forecasting Dashboard](images/model_graph.png)
 
-### 3. **Personalized Optimization Recommendations**
-   - **Appliance-specific efficiency improvements**
-   - **Behavioral consumption adjustments** 
-   - **Solar energy feasibility analysis**
-   - Cost-saving calculations with ROI projections
-   - Government subsidy integration (PM Surya Ghar scheme)
+### 3. **Renewable Energy Integration**
+   - **Solar Energy Dashboard**: Predicts solar energy output based on irradiance data.
+   - **Wind Energy Dashboard**: Estimates wind energy potential using wind speed data.
+   - Cost-saving calculator for solar and wind installations.
 
-   ![Optimization Dashboard](https://via.placeholder.com/800x400/795548/FFFFFF?text=Optimization+Recommendations+with+Savings)
 
-### 4. **Solar Integration Analysis**
-   - **Roof area-based generation potential**
-   - **Location-specific solar generation estimates**
-   - **Payback period and ROI analysis**
-   - Monthly savings projections and export income calculations
+### 4. **Energy Savings Plan**
+   - Tailored recommendations for **Education, Industry, and Residential** sectors.
+   - Sector-specific guidelines for optimizing energy usage.
 
-   ![Solar Analysis](https://via.placeholder.com/800x400/9C27B0/FFFFFF?text=Solar+Feasibility+Analysis)
 
-### 5. **Real-time Analytics & Visualization**
-   - Interactive consumption trend charts
-   - Bill comparison analytics
-   - Savings impact visualization
-   - Exportable reports and action plans
+### 5. **Cost Calculator**
+   - Estimates electricity costs and potential savings from renewable energy.
+   - Aligns with **TNERC Tariff Rates (July 2024)** for accurate financial analysis.
+
 
 ---
 
 ## Architecture
 
-![System Architecture](https://via.placeholder.com/800x400/607D8B/FFFFFF?text=Three-Tier+System+Architecture)
+![System Architecture](images/Architecture.png)
 
 The system integrates:
-- **Frontend**: Streamlit web application for user interaction
-- **Machine Learning Engine**: Scikit-learn with Random Forest algorithms
-- **Data Processing**: Pandas and NumPy for real-time calculations  
-- **Cloud Deployment**: Streamlit Cloud for accessibility
-- **Session Management**: Seamless data flow across modules
+- **Data Collection**: Power consumption, weather, solar irradiance, and wind speed data.
+- **Machine Learning Models**: ANN, RF, and SVM for forecasting and anomaly detection.
+- **Cloud Deployment**: Hosted on **Streamlit Cloud** for real-time accessibility.
+- **GitHub**: Version control and data storage.
 
 ---
 
 ## Technologies Used
 
 ### Machine Learning Models
-- **Random Forest Regressor** (Enhanced with feature engineering)
-- **Feature Engineering**: Lag variables, seasonal decomposition, rolling statistics
-- **Model Validation**: MAE, RMSE, R² scoring, temporal cross-validation
+- **Artificial Neural Networks (ANN)**
+- **Random Forest (RF)**
+- **Support Vector Machines (SVM)**
 
-### Libraries & Frameworks
-- **Streamlit**: Interactive web application framework
-- **Scikit-learn**: Machine learning algorithms and pipelines
-- **Pandas, NumPy**: Data manipulation and processing
-- **Matplotlib**: Data visualization and charting
-- **OpenPyXL**: Excel file handling for data input
+### Libraries
+- **Pandas, NumPy, SciPy**: Data manipulation and preprocessing.
+- **Matplotlib, Seaborn**: Data visualization.
+- **Scikit-learn**: Model training and evaluation.
+- **Streamlit**: Interactive web application.
 
-### Deployment & Infrastructure
-- **Streamlit Cloud**: Application hosting and deployment
-- **GitHub**: Version control and code management
-- **Python 3.8+**: Runtime environment
+### Cloud & Deployment
+- **GitHub**: Data storage and version control.
+- **Streamlit Cloud**: Hosting the interactive dashboard.
 
 ---
 
 ## Results
 
-### Model Performance Metrics
-| Metric | Training Score | Test Score |
-|--------|----------------|------------|
-| R² Score | 0.92 | 0.85 |
-| MAE | 8.2 | 12.1 |
-| RMSE | 10.5 | 15.3 |
-| MAPE | 6.8% | 9.2% |
+### Model Performance Comparison
+| Model | MSE       | R² Score | MAE      |
+|-------|-----------|----------|----------|
+| ANN   | 250.32    | 0.78     | 12.45    |
+| RF    | **197.95**| **0.83** | **10.38**|
+| SVM   | 300.67    | 0.72     | 15.20    |
 
-### Optimization Impact Analysis
-- **15-40% potential cost reduction** through implemented recommendations
-- **3-5 year solar payback period** with government subsidies
-- **Appliance-specific savings** identified for maximum impact
-- **Quick win opportunities** with immediate savings potential
+![Model Comparison](images/Comparison.png)
 
-![Performance Metrics](https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Model+Performance+and+Savings+Metrics)
+### Key Outcomes
+- **RF model outperforms ANN and SVM** in forecasting accuracy.
+- **Solar and wind energy predictions** guide infrastructure planning.
+- **Cost-saving tool** demonstrates financial viability of hybrid energy systems.
 
 ---
 
 ## How to Use
 
-### Access the Live Application
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-link.streamlit.app/)
+### Access the Dashboard
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-cloud-fkkex5gmsredm7ur8oqlwa.streamlit.app/)
 
 ### Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/household-energy-forecasting.git
+   git clone https://github.com/energyauditeee/streamlit-cloud.git
    ```
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Run the application:
+3. Run the Streamlit app:
    ```bash
-   streamlit run Main_Page.py
+   streamlit run home.py
    ```
 
-### Application Navigation Workflow
-1. **Start with Energy Survey**: Input household appliance data and usage patterns
-2. **View AI Forecasts**: Get 12-month consumption predictions with accuracy metrics
-3. **Explore Optimization**: Receive personalized savings recommendations
-4. **Analyze Solar Potential**: Evaluate renewable energy integration feasibility
-5. **Download Action Plan**: Get implementable optimization strategy
+---
 
-![Complete Workflow](https://via.placeholder.com/800x400/009688/FFFFFF?text=End-to-End+User+Workflow+from+Data+Input+to+Optimization)
+## Future Work
+- **IoT Integration**: Real-time sensor data for granular monitoring.
+- **Mobile App Support**: On-the-go energy monitoring.
+- **Dynamic Pricing Models**: Enhanced cost analysis based on market fluctuations.
+- **Scalability**: Expansion to larger campuses or industrial sites.
 
 ---
 
-## Project Structure
-```
-household-energy-forecasting/
-├── Main_Page.py                 # Main application entry point
-├── requirements.txt             # Python dependencies
-├── runtime.txt                  # Python version specification
-├── README.md                    # Project documentation
-└── pages/
-    ├── 1_AI_Forecasting.py      # Machine learning predictions module
-    ├── 2_Survey_Calculator.py   # Energy consumption survey module
-    └── 3_Optimization.py        # Savings recommendations module
-```
+## Team
+- **Keerthana R**
+- **Preethi V R**
+- **Raghavarthinii J K**
+- **Sakthipriya S L**
+
+**Supervisor**: Dr. P. Anbalagan  
+**Department of Electrical and Electronics Engineering**, University College of Engineering, BIT Campus, Tiruchirappalli.
 
 ---
 
-## Key Innovations
+## Publications
+1. **Conference Presentation**:  
+   "A Literature Review for Cloud-Based Efficient Energy Audit Management System Using Machine Learning," *National Conference on Innovative Trends in Science, Engineering, Technology, and Management (NCITSETM-25)*, May 2025.
 
-### Technical Innovations
-- **Hybrid ML Approach**: Combines Random Forest with domain-specific feature engineering
-- **Real-time Processing**: Instant bill calculations and optimization analysis
-- **TNEB-Specific Algorithms**: Customized for Tamil Nadu electricity slab rates
-- **Modular Architecture**: Scalable and maintainable code structure
-- **Automated Feature Engineering**: Dynamic feature selection and engineering
-
-### User Experience Innovations
-- **Zero-Installation Access**: Cloud-based deployment
-- **Intuitive Interface**: No technical expertise required
-- **Actionable Insights**: Practical, implementable recommendations
-- **Comprehensive Reporting**: Detailed savings analysis and action plans
-- **Mobile-Responsive Design**: Accessible across all devices
+2. **Published**:  
+   *International Journal of Engineering Research and Technology (IJERT)*.
+   - **DOI no**:10.17577/IJERTCONV13IS05032.
 
 ---
 
-## Future Enhancements
-
-### Planned Features
-- **Real-time Smart Meter Integration**: Live consumption data feeds
-- **Mobile Application**: On-the-go energy monitoring and alerts
-- **Community Benchmarking**: Compare with similar households
-- **Multi-State Expansion**: Support for different tariff structures across India
-- **Advanced Analytics**: Deep learning models for improved accuracy
-- **Weather Integration**: Climate-based consumption adjustments
-
-### Research & Development
-- **Anomaly Detection** for identifying appliance malfunctions
-- **Predictive Maintenance** alerts for electrical equipment
-- **Energy Storage Optimization** for solar users
-- **Tariff Optimization** algorithms for cost minimization
-- **Behavioral Pattern Analysis** for personalized recommendations
-
-![Future Roadmap](https://via.placeholder.com/800x400/3F51B5/FFFFFF?text=Future+Enhancements+and+Development+Roadmap)
+## References
+- [SRLDC Power Reports](https://www.srldc.in/Monthly-Reports)
+- [NASA Solar Data](https://power.larc.nasa.gov/data-access-viewer/)
+- [Weather Underground](https://www.wunderground.com/history/monthly/in/chennai/ICHENN51)
 
 ---
 
-## Impact & Applications
+## 💬 Feedback
 
-### For Households
-- **Cost Reduction**: 15-40% savings on electricity bills
-- **Informed Decisions**: Data-driven appliance upgrades and usage changes
-- **Renewable Planning**: Solar investment guidance with financial analysis
-- **Budget Planning**: Accurate consumption and bill forecasting
-- **Energy Awareness**: Understanding consumption patterns and waste areas
-
-### Environmental Benefits
-- **Reduced Carbon Footprint** through optimized consumption
-- **Promoted Renewable Adoption** with feasibility analysis
-- **Energy Conservation** through behavioral recommendations
-- **Sustainable Living** promotion through data insights
-
-### Economic Impact
-- **Reduced Electricity Bills** for participating households
-- **Job Creation** in energy auditing and solar installation sectors
-- **Increased Solar Adoption** through clear financial projections
-- **Energy Infrastructure Optimization** through distributed insights
-
----
-
-## Performance Validation
-
-### Model Validation Approach
-- **Temporal Cross-Validation** for time series robustness
-- **Multiple Metric Evaluation** (R², MAE, RMSE, MAPE)
-- **Seasonal Pattern Analysis** for prediction accuracy
-- **Real-world Testing** with household consumption data
-
-### User Experience Metrics
-- **Survey Completion Time**: Under 10 minutes
-- **Forecast Generation**: Within 30 seconds
-- **User Engagement**: High interaction rates across all modules
-- **Accuracy Satisfaction**: 90%+ user confidence in predictions
-
-![Final Results](https://via.placeholder.com/800x400/8BC34A/FFFFFF?text=Final+Optimization+Results+and+Action+Plan)
-
----
-
-## Team & Development
-
-**Developer**: Sakthipriya S  
-**Domain**: Energy Analytics & Machine Learning  
-**Platform**: Streamlit Cloud Deployment  
-**Focus**: Residential Energy Optimization
-
-### Development Timeline
-- **Phase 1**: Core forecasting algorithms and survey module (Completed)
-- **Phase 2**: Optimization engine and solar analysis (Completed) 
-- **Phase 3**: Deployment and performance optimization (Completed)
-- **Phase 4**: Advanced features and scalability (Planned)
-
----
-
-## References & Data Sources
-
-### Technical References
-- Scikit-learn Documentation for ML algorithms and pipelines
-- Streamlit Documentation for web application framework
-- Pandas Documentation for data processing and manipulation
-- TNEB Official Documents for electricity slab rates
-
-### Energy Data Standards
-- Appliance Power Consumption Standards (BEE ratings)
-- Solar Generation Potential Data (NASA and regional sources)
-- TNEB Electricity Slab Rates (2024 structure)
-- Household Consumption Patterns (Regional studies)
-
----
-
-## 💬 Feedback & Support
-
-For questions, suggestions, or technical support:
-- **Open an Issue**: [GitHub Issues](https://github.com/yourusername/household-energy-forecasting/issues)
-- **Contact Developer**: [Email](mailto:your-email@domain.com)
-- **Documentation**: [Project Wiki](https://github.com/yourusername/household-energy-forecasting/wiki)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
----
-
-*Empowering households with AI-driven energy insights for sustainable living and significant cost savings through machine learning and practical optimization strategies.*
+For queries or suggestions, open an issue or contact any of the contributors.CAN U GIVE README FILE LIKE THIS ONE
